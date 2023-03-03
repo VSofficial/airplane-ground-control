@@ -11,6 +11,7 @@
 		FE9EFAD329B267DE0042559B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EFAD229B267DE0042559B /* ContentView.swift */; };
 		FE9EFAD529B267E00042559B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE9EFAD429B267E00042559B /* Assets.xcassets */; };
 		FE9EFAD829B267E00042559B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE9EFAD729B267E00042559B /* Preview Assets.xcassets */; };
+		FE9EFAE229B269C30042559B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EFAE129B269C30042559B /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		FE9EFAD229B267DE0042559B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FE9EFAD429B267E00042559B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE9EFAD729B267E00042559B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FE9EFAE129B269C30042559B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,9 @@
 		FE9EFACF29B267DE0042559B /* airplane ground control */ = {
 			isa = PBXGroup;
 			children = (
+				FE9EFAE029B269A00042559B /* Model */,
+				FE9EFADF29B269970042559B /* Controller */,
+				FE9EFADE29B269660042559B /* Views */,
 				FE9EFAD029B267DE0042559B /* airplane_ground_controlApp.swift */,
 				FE9EFAD229B267DE0042559B /* ContentView.swift */,
 				FE9EFAD429B267E00042559B /* Assets.xcassets */,
@@ -65,6 +70,28 @@
 				FE9EFAD729B267E00042559B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FE9EFADE29B269660042559B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EFAE129B269C30042559B /* MainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FE9EFADF29B269970042559B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FE9EFAE029B269A00042559B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE9EFAD329B267DE0042559B /* ContentView.swift in Sources */,
+				FE9EFAE229B269C30042559B /* MainView.swift in Sources */,
 				FE9EFAD129B267DE0042559B /* airplane_ground_controlApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
