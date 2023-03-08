@@ -11,7 +11,7 @@ import SwiftUI
 struct airplane_ground_controlApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView()
         }
     }
 }
