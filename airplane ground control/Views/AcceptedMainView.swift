@@ -19,18 +19,20 @@ struct AcceptedMainView: View {
             VStack(spacing:100) {
                 
                 
-                List {
+                List() {
                     
                     Button(action: {
                         buttonAction()
                     }, label: {
-                        Text("Emergency Notifications ")
+                       Text("Emergency Notifications")
+                            .badge(5)
                     })
                     
                     Button(action: {
                         buttonAction()
                     }, label: {
                         Text("Chats ")
+                            .badge("Unread 4")
                     })
                     
                     
@@ -45,6 +47,7 @@ struct AcceptedMainView: View {
                         buttonAction()
                     }, label: {
                         Text("Make a SOS")
+                            .badge("0 brodcasts")
                     })
                     
                     
@@ -52,6 +55,7 @@ struct AcceptedMainView: View {
                         buttonAction()
                     }, label: {
                         Text("Weather Report")
+                            .badge("HOT/23F")
                     })
                     
                     Button(action: {
