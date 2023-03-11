@@ -9,10 +9,19 @@ import SwiftUI
 
 struct EmergencyNotifications: View {
     var body: some View {
-        List {
-            NotificationCard()
-            
-        }
+        //NavigationView {
+            VStack {
+                List {
+                    NotificationCard()
+                    
+                }
+            }
+           
+           // .navigationTitle("Notifications")
+       // }
+        
+       Text("Hi")
+        
     }
 }
 

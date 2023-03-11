@@ -9,74 +9,102 @@ import SwiftUI
 
 struct AcceptedMainView: View {
     var body: some View {
-        VStack {
+        NavigationView {
             
-        //    VStack {
-                Text("Home")
                 
-           // }
-            
             VStack(spacing:100) {
                 
                 
                 List() {
                     
-                    Button(action: {
-                        buttonAction()
-                    }, label: {
-                       Text("Emergency Notifications")
-                            .badge(5)
-                    })
-                    
-                    Button(action: {
-                        buttonAction()
-                    }, label: {
-                        Text("Chats ")
-                            .badge("Unread 4")
-                    })
-                    
-                    
-                    Button(action: {
-                        buttonAction()
-                    }, label: {
-                        Text("My Schuedule")
+                    //1
+                    NavigationLink(destination: EmergencyNotifications(), label: {
+                        Button(action: {
+                            buttonAction()
+                        }, label: {
+                        
+                                Text("Emergency Notifications")
+                                     .badge(5)
+                            }
+                         
+                        )
                     })
                     
                     
-                    Button(action: {
-                        buttonAction()
-                    }, label: {
-                        Text("Make a SOS")
-                            .badge("0 brodcasts")
+                    
+                    //2
+                    NavigationLink(destination: EmergencyNotifications(), label: {
+                        Button(action: {
+                            buttonAction()
+                        }, label: {
+                            Text("Chats ")
+                                .badge("Unread 4")
+                        })
                     })
                     
                     
-                    Button(action: {
-                        buttonAction()
-                    }, label: {
-                        Text("Weather Report")
-                            .badge("HOT/23F")
+                  
+                    
+                    //5
+                    NavigationLink(destination: EmergencyNotifications(), label: {
+                        Button(action: {
+                            buttonAction()
+                        }, label: {
+                            Text("My Schuedule")
+                        })
                     })
                     
-                    Button(action: {
-                        buttonAction()
-                    }, label: {
-                        Text("Flight Schedule")
+                    //6
+                    NavigationLink(destination: EmergencyNotifications(), label: {
+                        Button(action: {
+                            buttonAction()
+                        }, label: {
+                            Text("Make a SOS")
+                                .badge("0 brodcasts")
+                        })
                     })
                     
-                    Button(action: {
-                        buttonAction()
-                    }, label: {
-                        Text("Other seats")
+                    //7
+                    NavigationLink(destination: EmergencyNotifications(), label: {
+                        Button(action: {
+                            buttonAction()
+                        }, label: {
+                            Text("Weather Report")
+                                .badge("HOT/23F")
+                        })
+                    })
+                 
+                    
+                    
+                    
+                    //3
+                    NavigationLink(destination: EmergencyNotifications(), label: {
+                        Button(action: {
+                            buttonAction()
+                        }, label: {
+                            Text("Flight Schedule")
+                        })
                     })
                     
+                    //4
+                    NavigationLink(destination: EmergencyNotifications(), label: {
+                        
+                        Button(action: {
+                            buttonAction()
+                        }, label: {
+                            Text("Other seats")
+                        })
+                    })
                     
                    
-                       
-                        
-                     
-                  
+                    
+                    
+                    
                 }
+                
+                .navigationTitle("Home")
+                
+               
                 
               
             }
@@ -86,6 +114,7 @@ struct AcceptedMainView: View {
     
     func buttonAction() {
         print("pressed")
+        
     }
 
     
