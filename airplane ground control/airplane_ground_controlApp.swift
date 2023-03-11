@@ -7,11 +7,12 @@
 
 import SwiftUI
 
+
 @main
 struct airplane_ground_controlApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            AcceptedMainView()
         }
     }
 }

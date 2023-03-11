@@ -13,6 +13,7 @@
 		FE9EFAD529B267E00042559B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE9EFAD429B267E00042559B /* Assets.xcassets */; };
 		FE9EFAD829B267E00042559B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE9EFAD729B267E00042559B /* Preview Assets.xcassets */; };
 		FE9EFAE229B269C30042559B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EFAE129B269C30042559B /* MainView.swift */; };
+		FEF95C4129B90B020043D100 /* AcceptedMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF95C4029B90B020043D100 /* AcceptedMainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		FE9EFAD429B267E00042559B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE9EFAD729B267E00042559B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FE9EFAE129B269C30042559B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		FEF95C4029B90B020043D100 /* AcceptedMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptedMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				FE9EFAE129B269C30042559B /* MainView.swift */,
 				AC01408B29B7A92400C16062 /* LogInView.swift */,
+				FEF95C4029B90B020043D100 /* AcceptedMainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEF95C4129B90B020043D100 /* AcceptedMainView.swift in Sources */,
 				FE9EFAD329B267DE0042559B /* ContentView.swift in Sources */,
 				FE9EFAE229B269C30042559B /* MainView.swift in Sources */,
 				AC01408C29B7A92400C16062 /* LogInView.swift in Sources */,
