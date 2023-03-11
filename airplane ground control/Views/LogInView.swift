@@ -13,10 +13,14 @@ let lightGreyColor2 = Color(red: 200.0/255.0, green: 203.0/255.0, blue: 204.0/25
 let storedUsername = "Aditya"
 let storedPIN = "1234"
 
+
+
 struct LoginView: View {
     
     @State var username: String = ""
     @State var PIN: String = ""
+    
+    @State var loginAccess = false
     
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
@@ -48,20 +52,34 @@ struct LoginView: View {
                     }
                 }) {
                     LoginButtonContent()
+                    
                 }
             }
                 
             .padding()
-            if authenticationDidSucceed {
+            if authenticationDidSucceed == true {
+                //loginAccess = true
                 Text("Login succeeded!")
                     .font(.headline)
                     .frame(width: 250, height: 80)
                     .background(Color.yellow)
                     .cornerRadius(20.0)
+                
+                
+            
                     //.animation(Animation.default)
+                
+                
             }
+            
+            
         }
+        
+        
     }
+    
+     
+   
 }
 
 struct LogInView_Previews: PreviewProvider {
