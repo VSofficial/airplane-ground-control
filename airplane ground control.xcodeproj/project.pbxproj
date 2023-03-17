@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC01408C29B7A92400C16062 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01408B29B7A92400C16062 /* LogInView.swift */; };
+		AC33290929C48CB10077F77A /* makeSOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC33290829C48CB10077F77A /* makeSOSView.swift */; };
 		AC40343029BCA52500A67C46 /* nonAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40342F29BCA52500A67C46 /* nonAuthView.swift */; };
 		ACFD668629C43362005EA471 /* weatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFD668529C43361005EA471 /* weatherView.swift */; };
 		FE9EFAD129B267DE0042559B /* airplane_ground_controlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EFAD029B267DE0042559B /* airplane_ground_controlApp.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		AC01408B29B7A92400C16062 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		AC33290829C48CB10077F77A /* makeSOSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeSOSView.swift; sourceTree = "<group>"; };
 		AC40342F29BCA52500A67C46 /* nonAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nonAuthView.swift; sourceTree = "<group>"; };
 		ACFD668529C43361005EA471 /* weatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherView.swift; sourceTree = "<group>"; };
 		FE9EFACD29B267DE0042559B /* airplane ground control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "airplane ground control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,7 @@
 				AC40342F29BCA52500A67C46 /* nonAuthView.swift */,
 				AC01408B29B7A92400C16062 /* LogInView.swift */,
 				FEF95C4029B90B020043D100 /* AcceptedMainView.swift */,
+				AC33290829C48CB10077F77A /* makeSOSView.swift */,
 				FEE892AA29BC6FB700F35609 /* SubViews */,
 				FE9EFAE129B269C30042559B /* MainView.swift */,
 				ACFD668529C43361005EA471 /* weatherView.swift */,
@@ -230,6 +233,7 @@
 				FEE892AF29BC705300F35609 /* NotificationCard.swift in Sources */,
 				AC01408C29B7A92400C16062 /* LogInView.swift in Sources */,
 				FE9EFAD129B267DE0042559B /* airplane_ground_controlApp.swift in Sources */,
+				AC33290929C48CB10077F77A /* makeSOSView.swift in Sources */,
 				ACFD668629C43362005EA471 /* weatherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
