@@ -5,25 +5,37 @@
 //  Created by Aditya Tyagi  on 17/03/23.
 //
 
+import Foundation
 import SwiftUI
+import UIKit
 
 struct makeSOSView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Hello, World!")
     }
 }
 
 struct makeSOSView_Previews: PreviewProvider {
     static var previews: some View {
-       //  makeSOSView()
-        VStack{
-            locationTypeMenu()
-            flightTypeMenu()
-            emergencyIntensityTypeMenu()
-            emergencyTypeMenu()
-            assignTypeMenu()
-            emergencyDescriptionBox()
-        }.navigationTitle("Make a 🆘").navigationBarTitleDisplayMode(.inline)
+        VStack(){
+            VStack{
+                HStack{
+                    locationTypeMenu()
+                    flightTypeMenu()
+                }
+                emergencyIntensityTypeMenu()
+                emergencyTypeMenu()
+                assignTypeMenu()
+                emergencyDescriptionBox()
+            }.padding(.bottom, 40)
+            HStack{
+                CameraView().padding(.leading, 20)
+                ContenttView().padding(.trailing, 20)
+            }.padding(.leading, 10)
+            submitSOS().padding(.top, -30).padding(.bottom, 70)
+        }.navigationBarTitle("SmartPort✈️")
+            .navigationBarTitleDisplayMode(.inline)
+            .padding(.top, 105)
     }
 }
 
@@ -37,19 +49,19 @@ struct locationTypeMenu: View{
     var body: some View {
         Menu{
             Button(action: {
-                selectedLocation = "Ground Staff"
+                selectedLocation = "Terminal 1"
             }, label: {
-                Text("Ground Staff")
+                Text("Terminal 1")
             })
             Button(action: {
-                selectedLocation = "Crew Staff"
+                selectedLocation = "Terminal 2"
             }, label: {
-                Text("Crew Staff")
+                Text("Terminal 2")
             })
             Button(action: {
-                selectedLocation = "Maintenance Staff"
+                selectedLocation = "Terminal 3"
             }, label: {
-                Text("Maintenance Staff")
+                Text("Terminal 3")
             })
         } label: {
             Label(
@@ -58,14 +70,14 @@ struct locationTypeMenu: View{
                 }else{
                     Text(selectedLocation + "                                                            ").foregroundColor(.black).shadow(radius: -5)
                 }
-                    Image(systemName: "location")
+                    Image(systemName: "location").foregroundColor(.black)
                 },
             icon:{Image("plus")}
             )
             .font(.headline)
             .foregroundColor(lightGreyColor2)
             .padding()
-            .frame(width: 360, height: 60)
+            .frame(width: 175, height: 60)
             .background(lightGreyColor)
             .cornerRadius(5.0)
         }
@@ -79,19 +91,19 @@ struct flightTypeMenu: View{
     var body: some View {
         Menu{
             Button(action: {
-                selectedFlight = "Ground Staff"
+                selectedFlight = "BX 2308"
             }, label: {
-                Text("Ground Staff")
+                Text("BX 2308")
             })
             Button(action: {
-                selectedFlight = "Crew Staff"
+                selectedFlight = "PQ 9714"
             }, label: {
-                Text("Crew Staff")
+                Text("PQ 9714")
             })
             Button(action: {
-                selectedFlight = "Maintenance Staff"
+                selectedFlight = "TR 2834"
             }, label: {
-                Text("Maintenance Staff")
+                Text("TR 2834")
             })
         } label: {
             Label(
@@ -100,14 +112,14 @@ struct flightTypeMenu: View{
                 }else{
                     Text(selectedFlight + "                                                            ").foregroundColor(.black).shadow(radius: -5)
                 }
-                    Image(systemName: "airplane")
+                    Image(systemName: "airplane").foregroundColor(.black)
                 },
             icon:{Image("plus")}
             )
             .font(.headline)
             .foregroundColor(lightGreyColor2)
             .padding()
-            .frame(width: 360, height: 60)
+            .frame(width: 175, height: 60)
             .background(lightGreyColor)
             .cornerRadius(5.0)
         }
@@ -142,7 +154,7 @@ struct emergencyTypeMenu: View{
                 }else{
                     Text(selectedEmergencyCase + "                                                            ").foregroundColor(.black).shadow(radius: -5)
                 }
-                    Image(systemName: "exclamationmark.bubble.fill")
+                    Image(systemName: "exclamationmark.bubble").foregroundColor(.black)
                 },
             icon:{Image("plus")}
             )
@@ -158,7 +170,7 @@ struct emergencyTypeMenu: View{
 
 struct assignTypeMenu: View{
     
-    @State var selectedAssignedOfficer = "Assign"
+    @State var selectedAssignedOfficer = "Assign                       "
     
     var body: some View {
         Menu{
@@ -179,12 +191,12 @@ struct assignTypeMenu: View{
             })
         } label: {
             Label(
-                title:{ if(selectedAssignedOfficer == "Assign"){
+                title:{ if(selectedAssignedOfficer == "Assign                       "){
                     Text(selectedAssignedOfficer + "                                          ").background(lightGreyColor)
                 }else{
                     Text(selectedAssignedOfficer + "                                                            ").foregroundColor(.black).shadow(radius: -5)
                 }
-            Image(systemName: "person.circle.fill")
+                    Image(systemName: "person.circle").foregroundColor(.black)
                 },
             icon:{Image("plus")}
             )
@@ -227,7 +239,7 @@ struct emergencyIntensityTypeMenu: View{
                 }else{
                     Text(selectedEmergencyIntensity + "                                                            ").foregroundColor(.black).shadow(radius: -5)
                 }
-                    Image(systemName: "xmark.octagon.fill")
+                    Image(systemName: "xmark.octagon").foregroundColor(.black)
                 },
             icon:{Image("plus")}
             )
@@ -248,12 +260,219 @@ struct emergencyDescriptionBox: View{
         
         TextEditor(text: $emergencyDescription)
                         .foregroundColor(.secondary)
-                        .padding(.horizontal)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
                         .background(lightGreyColor)
                         .foregroundColor(lightGreyColor)
                         .cornerRadius(12)
-                        .frame(width: 360, height: 300)
+                        .frame(width: 360, height: 60)
+                        
     }
+}
+
+
+
+
+struct ImagePickerView: UIViewControllerRepresentable {
+    
+    @Binding var selectedImage: UIImage?
+    @Environment(\.presentationMode) var isPresented
+    var sourceType: UIImagePickerController.SourceType
+        
+    func makeUIViewController(context: Context) -> UIImagePickerController {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = self.sourceType
+        imagePicker.delegate = context.coordinator // confirming the delegate
+        return imagePicker
+    }
+
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
+
+    }
+
+    // Connecting the Coordinator class with this struct
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(picker: self)
+    }
+}
+
+struct ContenttView: View {
+    
+    @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
+    @State private var selectedImage: UIImage?
+    @State private var isImagePickerDisplay = false
+    
+    var body: some View {
+        NavigationView {
+            HStack{
+                HStack{
+                    Button("Select  ") {
+                        self.sourceType = .camera
+                        self.isImagePickerDisplay.toggle()
+                    }.padding(.leading, -5)
+                        .font(.system(size: 30))
+                    if selectedImage != nil {
+                        Image(uiImage: selectedImage!)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 30, height: 30)
+                    } else {
+                        Image(systemName: "photo")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 30, height: 30)
+                    }
+
+                }.font(.headline)
+                    .foregroundColor(.white)
+                    .frame(width: 158, height: 50)
+                    .background(Color.black)
+                    .cornerRadius(35.0)
+            }
+            .sheet(isPresented: self.$isImagePickerDisplay) {
+                ImagePickerView(selectedImage: self.$selectedImage, sourceType: self.sourceType)
+            }
+            
+        }
+    }
+}
+
+
+struct capturePictureButtonContent: View {
+    var body: some View {
+        Text("Take a Picture..")
+            .font(.headline)
+            .foregroundColor(.white)
+            .padding()
+            .frame(width: 178, height: 60)
+            .background(Color.black)
+            .cornerRadius(35.0)
+    }
+}
+
+class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    var picker: ImagePickerView
+    
+    init(picker: ImagePickerView) {
+        self.picker = picker
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectedImage = info[.originalImage] as? UIImage else { return }
+        self.picker.selectedImage = selectedImage
+        self.picker.isPresented.wrappedValue.dismiss()
+    }
+    
+}
+
+
+struct CameraView: View {
+
+    @State private var showImagePicker: Bool = false
+    @State private var image: Image? = nil
+
+    var body: some View {
+        HStack {
+
+            image?.resizable()
+                .scaledToFit()
+
+            Button("Open") {
+                self.showImagePicker = true
+            }.padding(.leading, -5)
+                .font(.system(size: 30))
+            
+                Image(systemName: "camera")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 30, height: 30)
+
+        }.font(.headline)
+            .foregroundColor(.white)
+            .padding()
+            .frame(width: 158, height: 50)
+            .background(Color.blue)
+            .cornerRadius(35.0).sheet(isPresented: self.$showImagePicker) {
+            PhotoCaptureView(showImagePicker: self.$showImagePicker, image: self.$image)
+        }
+    }
+}
+
+
+
+class ImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+
+    @Binding var isShown: Bool
+    @Binding var image: Image?
+
+    init(isShown: Binding<Bool>, image: Binding<Image?>) {
+        _isShown = isShown
+        _image = image
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        image = Image(uiImage: uiImage)
+        isShown = false
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        isShown = false
+    }
+}
+
+struct ImagePicker: UIViewControllerRepresentable {
+
+    @Binding var isShown: Bool
+    @Binding var image: Image?
+
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
+
+    }
+
+    func makeCoordinator() -> ImagePickerCoordinator {
+        return ImagePickerCoordinator(isShown: $isShown, image: $image)
+    }
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
+        let picker = UIImagePickerController()
+        picker.delegate = context.coordinator
+        if !UIImagePickerController.isSourceTypeAvailable(.camera){
+            picker.sourceType = .photoLibrary
+        } else {
+            picker.sourceType = .camera
+        }
+        return picker
+    }
+
+}
+
+struct PhotoCaptureView: View {
+
+    @Binding var showImagePicker: Bool
+    @Binding var image: Image?
+
+
+    var body: some View {
+        ImagePicker(isShown: $showImagePicker, image: $image)
+    }
+}
+
+#if DEBUG
+struct PhotoCaptureView_Previews: PreviewProvider {
+    static var previews: some View {
+        PhotoCaptureView(showImagePicker: .constant(false), image: .constant(Image("")))
+    }
+}
+#endif
+
+struct submitSOS: View{
+    var body: some View{
+        Button("Submit") {
+        }.foregroundColor(.white)
+            .padding()
+            .font(.system(size: 31))
+            .frame(width: 158, height: 50)
+            .background(Color.red)
+            .cornerRadius(35.0)
+    }
+    
 }
