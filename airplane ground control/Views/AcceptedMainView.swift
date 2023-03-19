@@ -8,7 +8,19 @@
 import SwiftUI
 
 struct AcceptedMainView: View {
+    
+   
+    init() {
+        FetchAPI()
+        
+        
+        
+    }
+    
+    
     var body: some View {
+        
+        
         NavigationView {
             
             VStack(spacing: -13) {
@@ -84,7 +96,7 @@ struct AcceptedMainView: View {
                 
                     NavigationLink(destination: EmergencyNotifications(), label: {
                         Button(action: {
-                            buttonAction()
+                           FetchAPI()
                         }, label: {
                             VStack(spacing: 0){
                                 HStack{
@@ -250,7 +262,10 @@ func buttonAction() {
     print("pressed")
 }
 
+
+
 struct AcceptedMainView_Previews: PreviewProvider {
+    
     static var previews: some View {
         AcceptedMainView()
     }

@@ -12,6 +12,9 @@
 		AC40343029BCA52500A67C46 /* nonAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40342F29BCA52500A67C46 /* nonAuthView.swift */; };
 		ACFD668629C43362005EA471 /* weatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFD668529C43361005EA471 /* weatherView.swift */; };
 		FE64044329C592C300D53717 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE64044229C592C300D53717 /* APIServices.swift */; };
+		FE64044C29C6DE7800D53717 /* InformationElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE64044B29C6DE7800D53717 /* InformationElement.swift */; };
+		FE64044F29C6DEA000D53717 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FE64044E29C6DEA000D53717 /* Alamofire */; };
+		FE64045229C6DEB200D53717 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = FE64045129C6DEB200D53717 /* SwiftyJSON */; };
 		FE9EFAD129B267DE0042559B /* airplane_ground_controlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EFAD029B267DE0042559B /* airplane_ground_controlApp.swift */; };
 		FE9EFAD329B267DE0042559B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EFAD229B267DE0042559B /* ContentView.swift */; };
 		FE9EFAD529B267E00042559B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE9EFAD429B267E00042559B /* Assets.xcassets */; };
@@ -30,6 +33,7 @@
 		AC40342F29BCA52500A67C46 /* nonAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nonAuthView.swift; sourceTree = "<group>"; };
 		ACFD668529C43361005EA471 /* weatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherView.swift; sourceTree = "<group>"; };
 		FE64044229C592C300D53717 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
+		FE64044B29C6DE7800D53717 /* InformationElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationElement.swift; sourceTree = "<group>"; };
 		FE9EFACD29B267DE0042559B /* airplane ground control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "airplane ground control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE9EFAD029B267DE0042559B /* airplane_ground_controlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = airplane_ground_controlApp.swift; sourceTree = "<group>"; };
 		FE9EFAD229B267DE0042559B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE64045229C6DEB200D53717 /* SwiftyJSON in Frameworks */,
+				FE64044F29C6DEA000D53717 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +132,7 @@
 		FE9EFAE029B269A00042559B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FE64044B29C6DE7800D53717 /* InformationElement.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,6 +187,10 @@
 			dependencies = (
 			);
 			name = "airplane ground control";
+			packageProductDependencies = (
+				FE64044E29C6DEA000D53717 /* Alamofire */,
+				FE64045129C6DEB200D53717 /* SwiftyJSON */,
+			);
 			productName = "airplane ground control";
 			productReference = FE9EFACD29B267DE0042559B /* airplane ground control.app */;
 			productType = "com.apple.product-type.application";
@@ -208,6 +219,10 @@
 				Base,
 			);
 			mainGroup = FE9EFAC429B267DE0042559B;
+			packageReferences = (
+				FE64044D29C6DEA000D53717 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				FE64045029C6DEB200D53717 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = FE9EFACE29B267DE0042559B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEF95C4129B90B020043D100 /* AcceptedMainView.swift in Sources */,
+				FE64044C29C6DE7800D53717 /* InformationElement.swift in Sources */,
 				FE9EFAD329B267DE0042559B /* ContentView.swift in Sources */,
 				FE64044329C592C300D53717 /* APIServices.swift in Sources */,
 				FEE892B329BC88A100F35609 /* WeatherReport.swift in Sources */,
@@ -447,6 +463,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FE64044D29C6DEA000D53717 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		FE64045029C6DEB200D53717 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FE64044E29C6DEA000D53717 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE64044D29C6DEA000D53717 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		FE64045129C6DEB200D53717 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE64045029C6DEB200D53717 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FE9EFAC529B267DE0042559B /* Project object */;
 }
