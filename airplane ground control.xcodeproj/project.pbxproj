@@ -10,6 +10,7 @@
 		AC01408C29B7A92400C16062 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01408B29B7A92400C16062 /* LogInView.swift */; };
 		AC40343029BCA52500A67C46 /* nonAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40342F29BCA52500A67C46 /* nonAuthView.swift */; };
 		ACFD668629C43362005EA471 /* weatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFD668529C43361005EA471 /* weatherView.swift */; };
+		FE64044329C592C300D53717 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE64044229C592C300D53717 /* APIServices.swift */; };
 		FE9EFAD129B267DE0042559B /* airplane_ground_controlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EFAD029B267DE0042559B /* airplane_ground_controlApp.swift */; };
 		FE9EFAD329B267DE0042559B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EFAD229B267DE0042559B /* ContentView.swift */; };
 		FE9EFAD529B267E00042559B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE9EFAD429B267E00042559B /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		AC01408B29B7A92400C16062 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		AC40342F29BCA52500A67C46 /* nonAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nonAuthView.swift; sourceTree = "<group>"; };
 		ACFD668529C43361005EA471 /* weatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherView.swift; sourceTree = "<group>"; };
+		FE64044229C592C300D53717 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
 		FE9EFACD29B267DE0042559B /* airplane ground control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "airplane ground control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE9EFAD029B267DE0042559B /* airplane_ground_controlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = airplane_ground_controlApp.swift; sourceTree = "<group>"; };
 		FE9EFAD229B267DE0042559B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				FEE892B429BCE2DC00F35609 /* LoginLogic.swift */,
+				FE64044229C592C300D53717 /* APIServices.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			files = (
 				FEF95C4129B90B020043D100 /* AcceptedMainView.swift in Sources */,
 				FE9EFAD329B267DE0042559B /* ContentView.swift in Sources */,
+				FE64044329C592C300D53717 /* APIServices.swift in Sources */,
 				FEE892B329BC88A100F35609 /* WeatherReport.swift in Sources */,
 				FEE892AD29BC6FE200F35609 /* EmergencyNotifications.swift in Sources */,
 				FE9EFAE229B269C30042559B /* MainView.swift in Sources */,
